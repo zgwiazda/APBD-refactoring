@@ -36,7 +36,7 @@ namespace LegacyApp
                 FirstName = firstName,
                 LastName = lastName
             };
-
+/*
             if (client.Type == "VeryImportantClient")
             {
                 user.HasCreditLimit = false;
@@ -60,13 +60,13 @@ namespace LegacyApp
                 }
             }
 
-            if (user.HasCreditLimit && user.CreditLimit < 500)
-            {
-                return false;
-            }
+            */
 
+            user.SetCredit(client);
+            
+            
             UserDataAccess.AddUser(user);
-            return true;
+            return user.IsType(client);
         }
     }
 }
